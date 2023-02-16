@@ -6,7 +6,7 @@ import (
 
 func (server *Server) InitializedRoutes() {
 	server.Router = mux.NewRouter()
-	server.Router.HandleFunc("/login", server.Login).Methods("POST")
-	server.Router.HandleFunc("/register", server.Register).Methods("POST")
-	server.Router.HandleFunc("/logout", Logout).Methods("GET")
+	server.Router.HandleFunc("/api/login", server.Login).Methods("POST")
+	server.Router.HandleFunc("/api/register", server.Register).Methods("POST")
+	server.Router.HandleFunc("/api/logout", Logout).Methods("GET")
 }
