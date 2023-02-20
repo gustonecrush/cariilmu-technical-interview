@@ -107,6 +107,6 @@ func (server *Server) Register(w http.ResponseWriter, r *http.Request) {
 	helper.ResponseJSON(w, http.StatusOK, response)
 }
 
-func Logout(w http.ResponseWriter, r *http.Request) {
+func (server *Server) Logout(w http.ResponseWriter, r *http.Request) {
 
 }
