@@ -142,8 +142,32 @@ Response :
 }
 ```
 
-### COURSE
+## COURSE
 
-### COURSE CATEGORY
+### Get Course
 
-### USER COURSES
+### Post Course
+
+### Update Course
+
+### Delete Course
+
+## COURSE CATEGORY
+
+### Get Course Category
+
+### Post Course Category
+
+### Update Course Category
+
+### Delete Course Category
+
+## USER COURSES
+
+### Get User Courses
+
+### Post User Courses
+
+### Update User Courses
+
+### Delete User Courses
