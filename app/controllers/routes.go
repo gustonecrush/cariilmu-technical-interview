@@ -20,5 +20,8 @@ func (server *Server) InitializedRoutes() {
 	server.Router.HandleFunc("/api/course-categories/{id}", server.Update).Methods("PUT")
 	server.Router.HandleFunc("/api/course-categories", server.Destroy).Methods("DELETE")
 
+	server.Router.HandleFunc("/api/courses", server.IndexCourse).Methods("GET")
 	server.Router.HandleFunc("/api/courses", server.StoreCourse).Methods("POST")
+	server.Router.HandleFunc("/api/courses", server.UpdateCourse).Methods("PUT")
+	server.Router.HandleFunc("/api/courses", server.DestroyCourse).Methods("DELETE")
 }

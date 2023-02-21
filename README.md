@@ -59,8 +59,6 @@ Response :
       "created_at": "timestamp",
       "updated_at": "timestamp"
   },
-  "access_token": "string, unique",
-  "token_type": "string",
 }
 ```
 

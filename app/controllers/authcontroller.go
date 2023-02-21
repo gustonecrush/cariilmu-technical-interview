@@ -77,7 +77,13 @@ func (server *Server) Login(w http.ResponseWriter, r *http.Request) {
 		HttpOnly: true,
 	})
 
-	response := map[string]string{"message": "Login successfully"}
+	response := map[string]any{
+		"status": true,
+		"status_code": 200,
+		"message": "Login Successfully",
+		"access_token": token,
+		"token_type": "Bearer",
+	}
 	helper.ResponseJSON(w, http.StatusOK, response)
 }
 
@@ -103,7 +109,12 @@ func (server *Server) Register(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	response := map[string]string{"message": "success"}
+	response := map[string]any{
+		"status": true,
+		"status_code": 200,
+		"message": "regist successfully",
+		"data": userInput,
+	}
 	helper.ResponseJSON(w, http.StatusOK, response)
 }
 
