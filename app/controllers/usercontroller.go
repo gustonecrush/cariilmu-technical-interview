@@ -43,7 +43,7 @@ func (server *Server) StoreUser(w http.ResponseWriter, r *http.Request) {
 	helper.ResponseJSON(w, http.StatusOK, response)
 }
 
-func (server *Server) DestroyUser(w http.ResponseWriter, r *http.Request) {
+func (server *Server) UpdateUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, err := strconv.ParseInt(vars["id"], 10, 64)
 	if err != nil {
@@ -70,7 +70,7 @@ func (server *Server) DestroyUser(w http.ResponseWriter, r *http.Request) {
 	helper.ResponseJSON(w, http.StatusOK, user)
 }
 
-func (server *Server) UpdateUser(w http.ResponseWriter, r *http.Request) {
+func (server *Server) DestroyUser(w http.ResponseWriter, r *http.Request) {
 	// mengambil input
 	input := map[string]string{"id": ""}
 
@@ -83,7 +83,7 @@ func (server *Server) UpdateUser(w http.ResponseWriter, r *http.Request) {
 
 	var user models.User
 	if server.DB.Delete(&user, input["id"]).RowsAffected == 0 {
-		helper.ResponseJSON(w, http.StatusBadRequest, "could not delete user")
+		helper.ResponseJSON(w, http.StatusBadRequest, "could not update user")
 		return
 	}
 
