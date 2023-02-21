@@ -17,7 +17,7 @@ import (
 
 func (server *Server) Login(w http.ResponseWriter, r *http.Request) {
 	// mengambil input json
-	var userInput models.User
+	var userInput models.Admin
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&userInput); err != nil {
 		response := map[string]string{"message": err.Error()}
@@ -27,7 +27,7 @@ func (server *Server) Login(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 
 	// ambil data user berdasarkan email
-	var user models.User
+	var user models.Admin
 	if err := server.DB.Where("email = ?", userInput.Email).First(&user).Error; err != nil {
 		switch  err {
 		case gorm.ErrRecordNotFound:
@@ -83,7 +83,7 @@ func (server *Server) Login(w http.ResponseWriter, r *http.Request) {
 
 func (server *Server) Register(w http.ResponseWriter, r *http.Request) {
 	// mengambil input json
-	var userInput models.User
+	var userInput models.Admin
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&userInput); err != nil {
 		response := map[string]string{"message": err.Error()}
