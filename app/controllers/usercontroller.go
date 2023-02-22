@@ -87,6 +87,6 @@ func (server *Server) DestroyUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	response := map[string]string{"message": "category successfully deleted"}
+	response := map[string]string{"message": "user successfully deleted"}
 	helper.ResponseJSON(w, http.StatusOK, response)
 }
